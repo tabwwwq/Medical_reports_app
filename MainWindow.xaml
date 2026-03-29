@@ -8,7 +8,6 @@
         ResizeMode="NoResize"
         Background="#FFF3F4F6">
     <Window.Resources>
-
         <Style x:Key="TitleText" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#FF0F172A"/>
         </Style>

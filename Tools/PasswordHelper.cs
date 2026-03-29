@@ -28,4 +28,8 @@ namespace MedicalReportsApp.Tools
             return hash == storedHash;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5851b048ca403db4e02813fa44c00bd41d75c69f
