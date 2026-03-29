@@ -60,7 +60,6 @@ namespace MedicalReportsApp.Services
             return true;
         }
 
-
         private bool EmailExistsInPatients(string email)
         {
             string query = "SELECT COUNT(*) FROM Patients WHERE Email = @Email;";
