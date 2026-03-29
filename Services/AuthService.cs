@@ -10,7 +10,7 @@ namespace MedicalReportsApp.Services
         private Data data = new Data();
         private EmailService emailService = new EmailService();
 
-        // ── LOGIN ────────────────────────────────────────────────────────────
+
         public bool Login(string email, string password, string role)
         {
             string table = role == "Doctor" ? "Doctors" : "Patients";
@@ -27,7 +27,6 @@ namespace MedicalReportsApp.Services
             return PasswordHelper.VerifyPassword(password, storedHash);
         }
 
-        // ── REGISTRATION ─────────────────────────────────────────────────────
         public void StartRegistration(string email, string password)
         {
             if (EmailExistsInPatients(email))
@@ -61,7 +60,7 @@ namespace MedicalReportsApp.Services
             return true;
         }
 
-        // ── PRIVATE HELPERS ──────────────────────────────────────────────────
+
         private bool EmailExistsInPatients(string email)
         {
             string query = "SELECT COUNT(*) FROM Patients WHERE Email = @Email;";

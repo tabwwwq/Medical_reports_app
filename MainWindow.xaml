@@ -8,7 +8,6 @@
         ResizeMode="NoResize"
         Background="#FFF3F4F6">
     <Window.Resources>
-
         <Style x:Key="TitleText" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#FF0F172A"/>
         </Style>
@@ -19,7 +18,6 @@
             <Setter Property="Foreground" Value="#FF374151"/>
         </Style>
 
-        <!-- Rounded TextBox -->
         <Style x:Key="InputTextBoxStyle" TargetType="TextBox">
             <Setter Property="Height" Value="52"/>
             <Setter Property="FontSize" Value="15"/>
@@ -55,7 +53,6 @@
             </Setter>
         </Style>
 
-        <!-- Rounded PasswordBox -->
         <Style x:Key="InputPasswordBoxStyle" TargetType="PasswordBox">
             <Setter Property="Height" Value="52"/>
             <Setter Property="FontSize" Value="15"/>
@@ -90,7 +87,6 @@
             </Setter>
         </Style>
 
-        <!-- Primary Button (Blue, rounded) -->
         <Style x:Key="PrimaryButtonStyle" TargetType="Button">
             <Setter Property="Height" Value="52"/>
             <Setter Property="FontSize" Value="16"/>
@@ -120,7 +116,6 @@
             </Setter>
         </Style>
 
-        <!-- Green Button (rounded) -->
         <Style x:Key="GreenButtonStyle" TargetType="Button">
             <Setter Property="Height" Value="52"/>
             <Setter Property="FontSize" Value="16"/>
@@ -150,7 +145,6 @@
             </Setter>
         </Style>
 
-        <!-- Secondary Button (White, rounded) -->
         <Style x:Key="SecondaryButtonStyle" TargetType="Button">
             <Setter Property="Height" Value="52"/>
             <Setter Property="FontSize" Value="15"/>
@@ -247,7 +241,6 @@
                                    Visibility="Collapsed"
                                    Margin="0,0,0,12"/>
 
-                        <!-- Verification Panel -->
                         <Border x:Name="verificationPanel"
                                 Visibility="Collapsed"
                                 Margin="0,4,0,0">
@@ -317,7 +310,6 @@
 
                         <Separator Background="#FFE5E7EB" Margin="0,16,0,14"/>
 
-                        <!-- Back to Login -->
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock Text="Already have an account? "
                                        FontSize="14"

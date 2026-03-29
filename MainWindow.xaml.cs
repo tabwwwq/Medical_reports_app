@@ -1,7 +1,6 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Media;
 using MedicalReportsApp.Services;
 
 namespace MedicalReportsApp
@@ -170,7 +169,11 @@ namespace MedicalReportsApp
 
         private bool IsValidEmail(string email)
         {
-            if (string.IsNullOrWhiteSpace(email)) return false;
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return false;
+            }
+
             return Regex.IsMatch(email, @"^[^\s@]+@[^\s@]+\.[^\s@]+$");
         }
     }
