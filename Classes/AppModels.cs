@@ -35,7 +35,6 @@ namespace MedicalReportsApp.Classes
         public string Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public string Phone { get; set; }
-        public string ZipCode { get; set; }
         public int? FamilyDoctorId { get; set; }
 
         public int Age

@@ -347,39 +347,98 @@
                                 Margin="0,0,0,18"
                                 Click="btnSendResetCode_Click"/>
 
-                        <TextBlock Text="Verification Code"
-                                   FontSize="14"
-                                   FontWeight="SemiBold"
-                                   Foreground="#FF374151"
-                                   Margin="0,0,0,8"/>
-                        <TextBox x:Name="txtResetCode"
-                                 Style="{StaticResource InputTextBoxStyle}"
-                                 Tag="Enter code from email"
-                                 Margin="0,0,0,18"/>
+                        <Border x:Name="resetSuccessBorder"
+                                Visibility="Collapsed"
+                                Background="#FFF0FDF4"
+                                BorderBrush="#FF86EFAC"
+                                BorderThickness="1.5"
+                                CornerRadius="12"
+                                Padding="16"
+                                Margin="0,0,0,18">
+                            <StackPanel>
+                                <TextBlock Text="Verification code sent!"
+                                           FontSize="16"
+                                           FontWeight="SemiBold"
+                                           Foreground="#FF15803D"/>
+                                <TextBlock x:Name="txtResetVerificationInfo"
+                                           Margin="0,6,0,0"
+                                           FontSize="14"
+                                           Foreground="#FF166534"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
 
-                        <TextBlock Text="New Password"
-                                   FontSize="14"
-                                   FontWeight="SemiBold"
-                                   Foreground="#FF374151"
-                                   Margin="0,0,0,8"/>
-                        <PasswordBox x:Name="txtNewPassword"
-                                     Style="{StaticResource InputPasswordBoxStyle}"
-                                     Margin="0,0,0,18"/>
+                        <StackPanel x:Name="resetVerificationPanel" Visibility="Collapsed">
+                            <TextBlock Text="Enter Verification Code *"
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       Foreground="#FF374151"
+                                       Margin="0,0,0,8"/>
+                            <TextBox x:Name="txtResetCode"
+                                     Style="{StaticResource InputTextBoxStyle}"
+                                     Margin="0,0,0,10"
+                                     FontSize="22"
+                                     FontWeight="SemiBold"
+                                     HorizontalContentAlignment="Center"
+                                     MaxLength="6"/>
 
-                        <TextBlock Text="Repeat New Password"
-                                   FontSize="14"
-                                   FontWeight="SemiBold"
-                                   Foreground="#FF374151"
-                                   Margin="0,0,0,8"/>
-                        <PasswordBox x:Name="txtRepeatNewPassword"
-                                     Style="{StaticResource InputPasswordBoxStyle}"
-                                     Margin="0,0,0,18"/>
+                            <TextBlock Text="Enter the 6-digit code sent to your email"
+                                       FontSize="13"
+                                       Foreground="#FF64748B"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,0,0,18"/>
 
-                        <Button x:Name="btnChangePassword"
-                                Content="Change Password"
-                                Style="{StaticResource SignInButtonStyle}"
-                                Margin="0,0,0,16"
-                                Click="btnChangePassword_Click"/>
+                            <TextBlock Text="New Password"
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       Foreground="#FF374151"
+                                       Margin="0,0,0,8"/>
+                            <PasswordBox x:Name="txtNewPassword"
+                                         Style="{StaticResource InputPasswordBoxStyle}"
+                                         Margin="0,0,0,18"/>
+
+                            <TextBlock Text="Repeat New Password"
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       Foreground="#FF374151"
+                                       Margin="0,0,0,8"/>
+                            <PasswordBox x:Name="txtRepeatNewPassword"
+                                         Style="{StaticResource InputPasswordBoxStyle}"
+                                         Margin="0,0,0,18"/>
+
+                            <Grid Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="14"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button Grid.Column="0"
+                                        Content="Back"
+                                        Style="{StaticResource SignInButtonStyle}"
+                                        Background="White"
+                                        Foreground="#FF111827"
+                                        BorderBrush="#FFD1D5DB"
+                                        Click="btnResetBack_Click"/>
+
+                                <Button x:Name="btnChangePassword"
+                                        Grid.Column="2"
+                                        Content="Save"
+                                        Style="{StaticResource GreenButtonStyle}"
+                                        Click="btnChangePassword_Click"/>
+                            </Grid>
+
+                            <Button Content="Resend verification code"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="#FF2563EB"
+                                    FontSize="14"
+                                    FontWeight="SemiBold"
+                                    Cursor="Hand"
+                                    Padding="0"
+                                    HorizontalAlignment="Center"
+                                    Click="btnSendResetCode_Click"/>
+                        </StackPanel>
 
                         <Button x:Name="btnBackToSignIn"
                                 Content="Back to Sign In"
@@ -390,6 +449,7 @@
                                 FontWeight="SemiBold"
                                 Cursor="Hand"
                                 Padding="0"
+                                Margin="0,8,0,0"
                                 Click="btnBackToSignIn_Click"/>
                     </StackPanel>
                 </Grid>

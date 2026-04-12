@@ -30,7 +30,7 @@ namespace MedicalReportsApp.Services
         public Patient GetPatientByEmail(string email)
         {
             string query = @"
-SELECT PatientId, FirstName, LastName, Email, PasswordHash, Address, City, ZipCode, BloodType, Gender, BirthDate, Phone, FamilyDoctorId, CreatedAt, IsActive
+SELECT PatientId, FirstName, LastName, Email, PasswordHash, Address, City, BloodType, Gender, BirthDate, Phone, FamilyDoctorId, CreatedAt, IsActive
 FROM Patients
 WHERE Email = @Email AND IsActive = 1;";
 
@@ -52,7 +52,6 @@ WHERE Email = @Email AND IsActive = 1;";
                         patient.PasswordHash = reader.GetString("PasswordHash");
                         patient.Address = reader.IsDBNull(reader.GetOrdinal("Address")) ? "Not added" : reader.GetString("Address");
                         patient.City = reader.IsDBNull(reader.GetOrdinal("City")) ? "" : reader.GetString("City");
-                        patient.ZipCode = reader.IsDBNull(reader.GetOrdinal("ZipCode")) ? "" : reader.GetString("ZipCode");
                         patient.BloodType = reader.IsDBNull(reader.GetOrdinal("BloodType")) ? "Not added" : reader.GetString("BloodType");
                         patient.Gender = reader.GetString("Gender");
                         patient.BirthDate = reader.GetDateTime("BirthDate");
@@ -278,5 +277,6 @@ WHERE Email = @Email AND IsActive = 1;";
                 command.Parameters.AddWithValue("@Email", email);
             });
         }
+
     }
 }

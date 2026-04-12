@@ -141,6 +141,7 @@
                                     <Button Content="Edit Profile" Click="btnEditProfile_Click" Style="{StaticResource GhostButtonStyle}" Margin="0,0,10,0"/>
                                     <Button Content="Logout" Click="btnLogout_Click" Style="{StaticResource GhostButtonStyle}" HorizontalAlignment="Right"/>
                                 </StackPanel>
+
                             </DockPanel>
 
                             <Grid Margin="0,4,0,10">

@@ -47,6 +47,7 @@ namespace MedicalReportsApp
                 addressLine += ", " + cityPart;
             }
             txtAddress.Text = addressLine;
+
             txtDoctorName.Text = dashboard.DoctorName;
             txtDoctorSpecialization.Text = dashboard.DoctorSpecialization;
 
@@ -154,6 +155,7 @@ namespace MedicalReportsApp
             editWindow.Show();
             Close();
         }
+
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {

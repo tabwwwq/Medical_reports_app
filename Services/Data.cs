@@ -84,8 +84,7 @@ namespace MedicalReportsApp.Services
                 connection.Open();
                 command.CommandText = @"
 ALTER TABLE Patients ADD COLUMN IF NOT EXISTS City varchar(100) NULL AFTER Address;
-ALTER TABLE Patients ADD COLUMN IF NOT EXISTS BloodType varchar(10) NULL AFTER City;
-ALTER TABLE Patients ADD COLUMN IF NOT EXISTS ZipCode varchar(20) NULL AFTER City;";
+ALTER TABLE Patients ADD COLUMN IF NOT EXISTS BloodType varchar(10) NULL AFTER City;";
                 command.ExecuteNonQuery();
             }
 

@@ -90,9 +90,13 @@ namespace MedicalReportsApp
             txtNewPassword.Password = "";
             txtRepeatNewPassword.Password = "";
             txtResetInfo.Text = "Enter your email and get a code to change the password.";
+            txtResetVerificationInfo.Text = "";
             txtResetEmail.IsEnabled = true;
+            btnSendResetCode.Visibility = Visibility.Visible;
             btnSendResetCode.Content = "Send Code";
             btnSendResetCode.Style = (Style)FindResource("SignInButtonStyle");
+            resetSuccessBorder.Visibility = Visibility.Collapsed;
+            resetVerificationPanel.Visibility = Visibility.Collapsed;
             resetCodeWasSent = false;
             resetEmail = "";
         }
@@ -115,9 +119,12 @@ namespace MedicalReportsApp
                 resetCodeWasSent = true;
                 resetEmail = email;
                 txtResetEmail.IsEnabled = false;
-                btnSendResetCode.Content = "Code Sent";
-                btnSendResetCode.Style = (Style)FindResource("GreenButtonStyle");
-                txtResetInfo.Text = "Check your email: " + resetEmail;
+                btnSendResetCode.Visibility = Visibility.Collapsed;
+                resetSuccessBorder.Visibility = Visibility.Visible;
+                resetVerificationPanel.Visibility = Visibility.Visible;
+                txtResetVerificationInfo.Text = "Check your email: " + resetEmail;
+                txtResetInfo.Text = "Enter your email and get a code to change the password.";
+                txtResetCode.Text = "";
                 txtResetCode.Focus();
             }
             catch (Exception ex)
@@ -198,11 +205,34 @@ namespace MedicalReportsApp
             txtResetCode.Text = "";
             txtNewPassword.Password = "";
             txtRepeatNewPassword.Password = "";
+            txtResetVerificationInfo.Text = "";
             txtResetEmail.IsEnabled = true;
+            btnSendResetCode.Visibility = Visibility.Visible;
             btnSendResetCode.Content = "Send Code";
             btnSendResetCode.Style = (Style)FindResource("SignInButtonStyle");
+            resetSuccessBorder.Visibility = Visibility.Collapsed;
+            resetVerificationPanel.Visibility = Visibility.Collapsed;
             resetCodeWasSent = false;
             resetEmail = "";
+        }
+
+
+        private void btnResetBack_Click(object sender, RoutedEventArgs e)
+        {
+            ClearError();
+            txtResetCode.Text = "";
+            txtNewPassword.Password = "";
+            txtRepeatNewPassword.Password = "";
+            txtResetVerificationInfo.Text = "";
+            txtResetEmail.IsEnabled = true;
+            btnSendResetCode.Visibility = Visibility.Visible;
+            btnSendResetCode.Content = "Send Code";
+            btnSendResetCode.Style = (Style)FindResource("SignInButtonStyle");
+            resetSuccessBorder.Visibility = Visibility.Collapsed;
+            resetVerificationPanel.Visibility = Visibility.Collapsed;
+            resetCodeWasSent = false;
+            resetEmail = "";
+            txtResetInfo.Text = "Enter your email and get a code to change the password.";
         }
 
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
