@@ -1,6 +1,6 @@
 <Window x:Class="MedicalReportsApp.DoctorCompleteProfileWindow"
-        xmlns="http:
-        xmlns:x="http:
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Complete Doctor Profile"
         Height="760"
         Width="670"

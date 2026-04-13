@@ -1,6 +1,6 @@
 <Window x:Class="MedicalReportsApp.SuccessWindow"
-        xmlns="http:
-        xmlns:x="http:
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Success"
         Height="280"
         Width="430"
