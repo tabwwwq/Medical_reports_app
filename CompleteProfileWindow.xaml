@@ -1,0 +1,225 @@
+<Window x:Class="MedicalReportsApp.CompleteProfileWindow"
+        xmlns="http:
+        xmlns:x="http:
+        Title="Complete Profile"
+        Height="830"
+        Width="760"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#FFF3F4F6">
+    <Window.Resources>
+        <Style x:Key="LabelText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#FF374151"/>
+        </Style>
+
+        <Style x:Key="InputTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FFD1D5DB"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Foreground" Value="#FF1E293B"/>
+            <Setter Property="CaretBrush" Value="#FF2F6FED"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="14,0,14,0"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF2F6FED"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="InputComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FFD1D5DB"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Foreground" Value="#FF1E293B"/>
+            <Setter Property="Padding" Value="10,0,10,0"/>
+        </Style>
+
+        <Style x:Key="InputDatePickerStyle" TargetType="DatePicker">
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FFD1D5DB"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Foreground" Value="#FF1E293B"/>
+            <Setter Property="Padding" Value="8,0,8,0"/>
+        </Style>
+
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="56"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#FF2F6FED"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF2563EB"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF1D4ED8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LinkButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#FF64748B"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Complete Your Profile"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       Foreground="#FF0F172A"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,6"/>
+            <TextBlock Text="Please provide additional information"
+                       FontSize="15"
+                       Foreground="#FF64748B"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,28"/>
+
+            <Border Width="620"
+                    Background="White"
+                    CornerRadius="16"
+                    BorderBrush="#FFD1D5DB"
+                    BorderThickness="1.5"
+                    Padding="34,30,34,30">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,18">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="18"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="First Name *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                                <TextBox x:Name="txtFirstName" Style="{StaticResource InputTextBoxStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Last Name *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                                <TextBox x:Name="txtLastName" Style="{StaticResource InputTextBoxStyle}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Phone Number *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                        <TextBox x:Name="txtPhone" Style="{StaticResource InputTextBoxStyle}" Margin="0,0,0,18"/>
+
+                        <TextBlock Text="Address *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                        <TextBox x:Name="txtAddress" Style="{StaticResource InputTextBoxStyle}" Margin="0,0,0,18"/>
+
+                        <TextBlock Text="City *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                        <TextBox x:Name="txtCity" Style="{StaticResource InputTextBoxStyle}" Margin="0,0,0,18"/>
+
+                        <Grid Margin="0,0,0,18">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="18"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Blood Type *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                                <ComboBox x:Name="cmbBloodType" Style="{StaticResource InputComboBoxStyle}">
+                                    <ComboBoxItem Content="A+"/>
+                                    <ComboBoxItem Content="A-"/>
+                                    <ComboBoxItem Content="B+"/>
+                                    <ComboBoxItem Content="B-"/>
+                                    <ComboBoxItem Content="AB+"/>
+                                    <ComboBoxItem Content="AB-"/>
+                                    <ComboBoxItem Content="O+"/>
+                                    <ComboBoxItem Content="O-"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Gender *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                                <ComboBox x:Name="cmbGender" Style="{StaticResource InputComboBoxStyle}">
+                                    <ComboBoxItem Content="Male"/>
+                                    <ComboBoxItem Content="Female"/>
+                                    <ComboBoxItem Content="Other"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Date of Birth *" Style="{StaticResource LabelText}" Margin="0,0,0,8"/>
+                        <DatePicker x:Name="dpBirthDate" Style="{StaticResource InputDatePickerStyle}" Margin="0,0,0,18"/>
+
+                        <Border Background="#FFEFF6FF"
+                                BorderBrush="#FF60A5FA"
+                                BorderThickness="1.5"
+                                CornerRadius="12"
+                                Padding="16"
+                                Margin="0,2,0,18">
+                            <TextBlock TextWrapping="Wrap" FontSize="14" Foreground="#FF1D4ED8">
+                                <Run FontWeight="Bold" Text="Note: "/>
+                                <Run Text="This information will be used to provide you with better medical care and will be visible to your doctors."/>
+                            </TextBlock>
+                        </Border>
+
+                        <TextBlock x:Name="txtError"
+                                   Foreground="#FFDC2626"
+                                   FontSize="13"
+                                   Margin="0,0,0,12"
+                                   TextWrapping="Wrap"
+                                   Visibility="Collapsed"/>
+
+                        <Button x:Name="btnCompleteProfile"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                Content="Complete Profile"
+                                Click="btnCompleteProfile_Click"
+                                Margin="0,0,0,18"/>
+
+                        <Button x:Name="btnSkip"
+                                Style="{StaticResource LinkButtonStyle}"
+                                Content="Skip for now (you can complete this later)"
+                                HorizontalAlignment="Center"
+                                Click="btnSkip_Click"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

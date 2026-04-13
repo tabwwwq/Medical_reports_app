@@ -1,0 +1,254 @@
+<Window x:Class="MedicalReportsApp.ChangeEmailWindow"
+        xmlns="http:
+        xmlns:x="http:
+        Title="Change Email"
+        Height="860"
+        Width="620"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#FFF6F7FB">
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#FF111827"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+
+        <Style x:Key="InputStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="52"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FFD1D5DB"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Padding" Value="16,0,16,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12">
+                            <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF22C55E"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PasswordInputStyle" TargetType="PasswordBox">
+            <Setter Property="Height" Value="52"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FFD1D5DB"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Padding" Value="16,0,16,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12">
+                            <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF22C55E"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ReadOnlyStyle" TargetType="TextBox" BasedOn="{StaticResource InputStyle}">
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Background" Value="#FFF9FAFB"/>
+            <Setter Property="Foreground" Value="#FF111827"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <Style x:Key="SecondaryButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="56"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#FF111827"/>
+            <Setter Property="BorderBrush" Value="#FFD1D5DB"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FFF9FAFB"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="GreenButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="56"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Background" Value="#FF22C55E"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF16A34A"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF16A34A"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF15803D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="30">
+        <Border Background="White"
+                BorderBrush="#FFD1D5DB"
+                BorderThickness="1.3"
+                CornerRadius="18"
+                Padding="34">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="Change Email" FontSize="26" FontWeight="Bold" Foreground="#FF111827"/>
+                        <TextBlock Text="Update your email address" Margin="0,6,0,0" FontSize="16" Foreground="#FF4B5563"/>
+                    </StackPanel>
+                    <Button Grid.Column="1"
+                            Width="36"
+                            Height="36"
+                            Content="✕"
+                            Click="btnClose_Click"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            FontSize="18"
+                            Foreground="#FF6B7280"
+                            Cursor="Hand"/>
+                </Grid>
+
+                <ScrollViewer Grid.Row="1"
+                              Margin="0,28,0,0"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel>
+                        <StackPanel Margin="0,0,0,18">
+                            <TextBlock Text="Current Email" Style="{StaticResource LabelStyle}"/>
+                            <TextBox x:Name="txtCurrentEmail" Style="{StaticResource ReadOnlyStyle}"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,0,18">
+                            <TextBlock Text="New Email Address *" Style="{StaticResource LabelStyle}"/>
+                            <TextBox x:Name="txtNewEmail" Style="{StaticResource InputStyle}"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,0,0,20">
+                            <TextBlock Text="Current Password *" Style="{StaticResource LabelStyle}"/>
+                            <PasswordBox x:Name="txtCurrentPassword" Style="{StaticResource PasswordInputStyle}"/>
+                        </StackPanel>
+
+                        <Button x:Name="btnSendCode"
+                                Content="Send verification code"
+                                Click="btnSendCode_Click"
+                                Style="{StaticResource GreenButtonStyle}"
+                                Margin="0,0,0,16"/>
+
+                        <Border x:Name="successBorder"
+                                Visibility="Collapsed"
+                                Background="#FFF0FDF4"
+                                BorderBrush="#FF86EFAC"
+                                BorderThickness="1.5"
+                                CornerRadius="12"
+                                Padding="16"
+                                Margin="0,0,0,18">
+                            <StackPanel>
+                                <TextBlock Text="Verification code sent!" FontSize="16" FontWeight="SemiBold" Foreground="#FF15803D"/>
+                                <TextBlock x:Name="txtVerificationInfo" Margin="0,6,0,0" FontSize="14" Foreground="#FF166534" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+
+                        <StackPanel x:Name="verificationPanel" Visibility="Collapsed" Margin="0,0,0,6">
+                            <TextBlock Text="Enter Verification Code *" Style="{StaticResource LabelStyle}"/>
+                            <TextBox x:Name="txtVerificationCode"
+                                     Style="{StaticResource InputStyle}"
+                                     FontSize="22"
+                                     FontWeight="SemiBold"
+                                     HorizontalContentAlignment="Center"
+                                     MaxLength="6"/>
+                            <TextBlock Text="Enter the 6-digit code sent to your email"
+                                       Margin="0,10,0,22"
+                                       HorizontalAlignment="Center"
+                                       FontSize="14"
+                                       Foreground="#FF6B7280"/>
+
+                            <Grid Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="14"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0" Content="Back" Click="btnBack_Click" Style="{StaticResource SecondaryButtonStyle}"/>
+                                <Button Grid.Column="2" Content="Confirm" Click="btnConfirmChange_Click" Style="{StaticResource GreenButtonStyle}"/>
+                            </Grid>
+
+                            <Button Content="Resend verification code"
+                                    Click="btnResendCode_Click"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Cursor="Hand"
+                                    FontSize="15"
+                                    Foreground="#FF2563EB"
+                                    HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

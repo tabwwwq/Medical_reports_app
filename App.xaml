@@ -1,0 +1,8 @@
+<Application x:Class="MedicalReportsApp.App"
+             xmlns="http:
+             xmlns:x="http:
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
