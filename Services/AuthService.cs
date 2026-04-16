@@ -29,7 +29,6 @@ namespace MedicalReportsApp.Services
 
         public bool IsTwoFactorRequired(string email, string role)
         {
-            if (role != "Patient")
             {
                 return false;
             }
@@ -48,8 +47,6 @@ namespace MedicalReportsApp.Services
         }
 
         public void StartRegistration(string email, string password)
-        {
-            StartRegistration(email, password, "Patient");
         }
 
         public void StartRegistration(string email, string password, string role)
