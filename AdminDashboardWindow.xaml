@@ -226,7 +226,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBox x:Name="txtSearch" Grid.Column="0" Style="{StaticResource SearchBoxStyle}" VerticalContentAlignment="Center" KeyDown="txtSearch_KeyDown"/>
                     <ComboBox x:Name="cmbLogCategory" Grid.Column="1" Margin="12,2,162,2" Style="{StaticResource ComboBoxStyleRounded}" SelectionChanged="cmbLogCategory_SelectionChanged" Grid.ColumnSpan="2">
-                        <ComboBoxItem Content="All" IsSelected="True"/>ы
+                        <ComboBoxItem Content="All" IsSelected="True"/>
                         <ComboBoxItem Content="Allergies"/>
                         <ComboBoxItem Content="Prescriptions"/>
                         <ComboBoxItem Content="Visit"/>
