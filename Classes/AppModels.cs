@@ -253,6 +253,7 @@ namespace MedicalReportsApp.Classes
 
 
     public class SuspiciousActivityAlert
+    {
         public int? DoctorId { get; set; }
         public string DoctorName { get; set; }
         public int ChangeCount { get; set; }
@@ -305,6 +306,8 @@ namespace MedicalReportsApp.Classes
     }
 
     public class AdminDashboardData
+    {
+        public Admin Admin { get; set; }
         public List<AdminAuditLogCard> Logs { get; set; }
         public List<SuspiciousActivityAlert> SuspiciousActivities { get; set; }
         public List<AdminDoctorCard> Doctors { get; set; }
