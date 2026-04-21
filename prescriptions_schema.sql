@@ -1,0 +1,22 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS PrescriptionItems;
+DROP TABLE IF EXISTS Medicines;
+DROP TABLE IF EXISTS Prescriptions;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE Prescriptions (
+    PrescriptionId INT NOT NULL AUTO_INCREMENT,
+    PatientId INT NOT NULL,
+    DoctorId INT NULL,
+    Name VARCHAR(255) NOT NULL,
+    Dosage VARCHAR(120) NOT NULL,
+    Quantity VARCHAR(120) NOT NULL,
+    Status VARCHAR(50) NOT NULL DEFAULT 'Active',
+    CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (PrescriptionId),
+    INDEX IX_Prescriptions_PatientId (PatientId),
+    INDEX IX_Prescriptions_DoctorId (DoctorId),
+    CONSTRAINT FK_Prescriptions_Patients FOREIGN KEY (PatientId) REFERENCES Patients(PatientId) ON DELETE CASCADE,
+    CONSTRAINT FK_Prescriptions_Doctors FOREIGN KEY (DoctorId) REFERENCES Doctors(DoctorId) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
