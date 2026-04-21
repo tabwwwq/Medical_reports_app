@@ -249,7 +249,6 @@ namespace MedicalReportsApp.Classes
             }
         }
     }
-
     public class DoctorPatientDetailsData
     {
         public Patient Patient { get; set; }

@@ -36,13 +36,11 @@ namespace MedicalReportsApp
             txtBloodType.Text = string.IsNullOrWhiteSpace(dashboard.Patient.BloodType) ? "Not added" : dashboard.Patient.BloodType;
             txtEmail.Text = dashboard.Patient.Email;
             txtPhone.Text = dashboard.Patient.Phone;
-
             string addressLine = dashboard.Patient.Address;
             if (string.IsNullOrWhiteSpace(addressLine))
             {
                 addressLine = "Not added";
             }
-
             string cityPart = dashboard.Patient.City;
             if (!string.IsNullOrWhiteSpace(cityPart))
             {

@@ -652,6 +652,5 @@ WHERE table_schema = DATABASE()
             }
         }
 
-
     }
 }
