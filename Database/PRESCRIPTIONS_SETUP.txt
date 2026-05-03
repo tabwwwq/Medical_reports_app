@@ -1,0 +1,18 @@
+1. Run prescriptions_schema.sql in your medical_reports_app database.
+2. Open the project in Visual Studio.
+3. Restore NuGet packages.
+4. Build and run.
+5. QRCoder package is required: QRCoder 1.4.3
+
+Changed files:
+- Classes/AppModels.cs
+- Services/DoctorDashboardService.cs
+- Services/PatientDashboardService.cs
+- Services/PrescriptionService.cs
+- DoctorPatientProfileWindow.xaml
+- DoctorPatientProfileWindow.xaml.cs
+- PatientDashboardWindow.xaml
+- PatientDashboardWindow.xaml.cs
+- PrescriptionDetailsWindow.xaml
+- PrescriptionDetailsWindow.xaml.cs
+- prescriptions_schema.sql
